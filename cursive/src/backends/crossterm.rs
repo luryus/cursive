@@ -105,6 +105,10 @@ fn translate_event(event: CKeyEvent) -> Event {
             modifiers: KeyModifiers::SHIFT,
             code: KeyCode::Char(c),
         } => Event::Char(c),
+        CKeyEvent {
+            modifiers: CTRL_ALT,
+            code: KeyCode::Char(c),
+        } => Event::Char(c),
 
         // Handle key + multiple modifiers
         CKeyEvent {
